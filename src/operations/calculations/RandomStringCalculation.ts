@@ -1,5 +1,5 @@
 import { HttpClientService } from 'src/httpClient/http.client.service';
-import { CalculationInterface } from './calculationFactory';
+import { CalculationInterface } from './CalculationFactory';
 
 export class RandomStringCalculation implements CalculationInterface {
   constructor(private httpClientService: HttpClientService) {}

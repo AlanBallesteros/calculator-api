@@ -4,7 +4,7 @@ import { OperationsController } from './operations.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Operation } from './entities/operation.entity';
 import { RecordsModule } from 'src/records/records.module';
-import { CalculationFactory } from './calculations/calculationFactory';
+import CalculationFactory from './calculations/CalculationFactory';
 import { HttpClientModule } from 'src/httpClient/http.client.module';
 
 @Module({

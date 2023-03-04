@@ -6,10 +6,9 @@ import { Repository } from 'typeorm';
 import { UpdateOperationDto } from './dto/update-operation.dto';
 import { Operation } from './entities/operation.entity';
 import { Record } from 'src/records/entities/record.entity';
-import {
-  CalculationFactory,
+import CalculationFactory, {
   CalculationTypes,
-} from './calculations/calculationFactory';
+} from './calculations/CalculationFactory';
 
 @Injectable()
 export class OperationsService {

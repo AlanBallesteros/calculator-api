@@ -26,14 +26,24 @@ export class AuthService {
     const payload = { username: user.username, sub: user.userId };
     const access_token = this.jwtService.sign(payload);
 
-    res.cookie('auth_token', access_token, { httpOnly: true });
-    res.cookie('auth_token_user', payload, { httpOnly: false });
+    res.cookie('auth_token', access_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+      path: '/',
+    });
+    res.cookie('auth_token_user', payload, {
+      httpOnly: false,
+      sameSite: 'none',
+      secure: true,
+      path: '/',
+    });
     return { msg: 'Success' };
   }
 
   async logout(res: Response) {
-    res.clearCookie('auth_token');
-    res.clearCookie('auth_token_user');
-    return { msg: 'Success' };
+    res.clearCookie('auth_token', { expires: new Date(Date.now()) });
+    res.clearCookie('auth_token_user', { expires: new Date(Date.now()) });
+    return { msg: 'Succesfully logout' };
   }
 }

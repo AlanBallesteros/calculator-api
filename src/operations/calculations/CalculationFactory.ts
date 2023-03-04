@@ -23,7 +23,7 @@ export const CalculationTypes = {
 };
 
 @Injectable()
-export class CalculationFactory {
+export default class CalculationFactory {
   constructor(private httpClientService: HttpClientService) {}
   public createCalculation(type: string): CalculationInterface {
     switch (type) {
