@@ -26,7 +26,6 @@ export class OperationsService {
   }
 
   async findOne(id: number): Promise<Operation> {
-    console.log('number', id);
     const found = await this.operationsRepository.findOneBy({ id });
 
     if (!found) {

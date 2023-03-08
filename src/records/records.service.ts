@@ -34,7 +34,6 @@ export class RecordsService {
       query.where('operation.type like :type', { type: `%${search}%` });
     }
     if (orderby) {
-      console.log(orderby);
       query.orderBy(orderby, sort);
     }
     const [records, count] = await query.getManyAndCount();
